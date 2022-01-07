@@ -9,15 +9,16 @@ import UIKit
 
 class WelcomeViewController: UIViewController {
     //MARK: - IB Outlets
-    @IBOutlet var welcomeLabel: UILabel!
+    @IBOutlet private var welcomeLabel: UILabel!
 
     //MARK: - Public Properties
-    var welcomeString: String!
+    var userName = ""
+    
 
     //MARK: - Life Cycles Methods
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        welcomeLabel.text = welcomeString
+        welcomeLabel.text = "Welcome, \(userName)\n👋"
     }
 }

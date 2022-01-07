@@ -47,11 +47,11 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
 
     override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {
         guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
-        welcomeVC.welcomeString = "Welcome, \(userNameTF.text ?? "")\n👋"
+        welcomeVC.userName = userNameTF.text ?? ""
     }
 
     //MARK: - IB Actions
-    @IBAction private func valueOfTFChanged() {
+    @IBAction func valueOfTFChanged() {
         if let userName = userNameTF.text, let password = passwordTF.text {
             if !userName.isEmpty, !password.isEmpty {
                 logInButton.isEnabled = true
@@ -61,15 +61,15 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         }
     }
 
-    @IBAction private func forgotUserNameButtonPressed() {
+    @IBAction func forgotUserNameButtonPressed() {
         showAlert(title: "Oops!", message: "Your name is User 😉")
     }
 
-    @IBAction private func forgotPasswordButtonPressed() {
+    @IBAction func forgotPasswordButtonPressed() {
         showAlert(title: "Oops!", message: "Your password is Password 😉")
     }
 
-    @IBAction private func unwind(for _: UIStoryboardSegue) {
+    @IBAction func unwind(for _: UIStoryboardSegue) {
         passwordTF.text = nil
         userNameTF.text = nil
 
