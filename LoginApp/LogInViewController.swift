@@ -7,16 +7,16 @@
 
 import UIKit
 
-class LogInViewController: UIViewController, UITextFieldDelegate {
+class LogInViewController: UIViewController {
     //MARK: - IB Outlets
     @IBOutlet private var userNameTF: UITextField!
     @IBOutlet private var passwordTF: UITextField!
 
     @IBOutlet private var logInButton: UIButton!
-    
+
     //MARK: - Private Properties
-    let userName = "User"
-    let password = "Password"
+    private let userName = "User"
+    private let password = "Password"
 
     //MARK: - Life Cycles Methods
     override func viewDidLoad() {
@@ -24,23 +24,18 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
 
         userNameTF.delegate = self
         passwordTF.delegate = self
-        //I have no idea what I'm doing =)
 
         logInButton.isEnabled = false
     }
 
-    //MARK: - Override Methods
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-        view.endEditing(true)
-    }
-
+    //MARK: - Navigation
     override func shouldPerformSegue(withIdentifier _: String, sender _: Any?) -> Bool {
         if userNameTF.text != userName || passwordTF.text != password {
             showAlert(
                 title: "Invalid login or password",
                 message: "Please, enter correct login and password"
             )
+
             passwordTF.text = nil
             logInButton.isEnabled = false
 
@@ -49,7 +44,6 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         return true
     }
 
-    //MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {
         guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
         welcomeVC.userName = userNameTF.text ?? ""
@@ -86,6 +80,14 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default))
         present(alert, animated: true)
+    }
+}
+
+//MARK: - UITextFieldDelegate
+extension LogInViewController: UITextFieldDelegate {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
