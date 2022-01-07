@@ -72,6 +72,8 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     @IBAction private func unwind(for _: UIStoryboardSegue) {
         passwordTF.text = nil
         userNameTF.text = nil
+
+        logInButton.isEnabled = false
     }
 
     //MARK: - Private Methods
