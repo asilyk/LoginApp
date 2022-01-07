@@ -14,6 +14,13 @@ class LogInViewController: UIViewController {
 
     @IBOutlet private var logInButton: UIButton!
 
+    //MARK: - Life Cycles Methods
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        logInButton.isEnabled = false
+    }
+    
     //MARK: - Override Methods
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
@@ -27,6 +34,7 @@ class LogInViewController: UIViewController {
                 message: "Please, enter correct login and password"
             )
             passwordTF.text = nil
+            logInButton.isEnabled = false
 
             return false
         }
@@ -39,6 +47,15 @@ class LogInViewController: UIViewController {
     }
 
     //MARK: - IB Actions
+    @IBAction func valueOfTFChanged() {
+        if let userName = userNameTF.text, let password = passwordTF.text {
+            if !userName.isEmpty && !password.isEmpty {
+                logInButton.isEnabled = true
+            } else {
+                logInButton.isEnabled = false
+            }
+        }
+    }
     @IBAction private func forgotUserNameButtonPressed() {
         showAlert(title: "Oops!", message: "Your name is User 😉")
     }
