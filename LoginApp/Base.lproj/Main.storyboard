@@ -34,7 +34,6 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                         <state key="normal" title="Log In"/>
                                         <connections>
-                                            <action selector="logInButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="7I5-TN-Qf8"/>
                                             <segue destination="l36-tD-fjQ" kind="presentation" modalPresentationStyle="fullScreen" id="VBR-I2-TEZ"/>
                                         </connections>
                                     </button>
