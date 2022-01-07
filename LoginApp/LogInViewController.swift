@@ -14,15 +14,15 @@ class LogInViewController: UIViewController {
 
     @IBOutlet private var logInButton: UIButton!
 
-    //MARK: - Life Cycles Methods
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
     //MARK: - Override Methods
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super .touchesBegan(touches, with: event)
+        super.touchesBegan(touches, with: event)
         view.endEditing(true)
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {
+        guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
+        welcomeVC.welcomeString = "Welcome, \(userNameTF.text ?? "")\n👋"
     }
 
     //MARK: - IB Actions
@@ -35,13 +35,18 @@ class LogInViewController: UIViewController {
     }
 
     @IBAction private func logInButtonPressed() {
-        if userNameTF.text != "User", passwordTF.text != "Password" {
+        if userNameTF.text != "User" || passwordTF.text != "Password" {
             showAlert(
                 title: "Invalid login or password",
                 message: "Please, enter correct login and password"
             )
             passwordTF.text = nil
         }
+    }
+    
+    @IBAction private func unwind(for unwindSegue: UIStoryboardSegue) {
+        passwordTF.text = nil
+        userNameTF.text = nil
     }
 
     //MARK: - Private Methods
