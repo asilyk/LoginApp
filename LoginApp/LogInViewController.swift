@@ -13,6 +13,10 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet private var passwordTF: UITextField!
 
     @IBOutlet private var logInButton: UIButton!
+    
+    //MARK: - Private Properties
+    let userName = "User"
+    let password = "Password"
 
     //MARK: - Life Cycles Methods
     override func viewDidLoad() {
@@ -32,7 +36,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     }
 
     override func shouldPerformSegue(withIdentifier _: String, sender _: Any?) -> Bool {
-        if userNameTF.text != "User" || passwordTF.text != "Password" {
+        if userNameTF.text != userName || passwordTF.text != password {
             showAlert(
                 title: "Invalid login or password",
                 message: "Please, enter correct login and password"
@@ -45,6 +49,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         return true
     }
 
+    //MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {
         guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
         welcomeVC.userName = userNameTF.text ?? ""
@@ -62,11 +67,11 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func forgotUserNameButtonPressed() {
-        showAlert(title: "Oops!", message: "Your name is User 😉")
+        showAlert(title: "Oops!", message: "Your name is \(userName) 😉")
     }
 
     @IBAction func forgotPasswordButtonPressed() {
-        showAlert(title: "Oops!", message: "Your password is Password 😉")
+        showAlert(title: "Oops!", message: "Your password is \(password) 😉")
     }
 
     @IBAction func unwind(for _: UIStoryboardSegue) {
