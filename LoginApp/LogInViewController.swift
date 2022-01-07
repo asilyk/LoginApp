@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LogInViewController: UIViewController {
+class LogInViewController: UIViewController, UITextFieldDelegate {
     //MARK: - IB Outlets
     @IBOutlet private var userNameTF: UITextField!
     @IBOutlet private var passwordTF: UITextField!
@@ -18,9 +18,13 @@ class LogInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        userNameTF.delegate = self
+        passwordTF.delegate = self
+        //I have no idea what I'm doing =)
+
         logInButton.isEnabled = false
     }
-    
+
     //MARK: - Override Methods
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
@@ -47,15 +51,16 @@ class LogInViewController: UIViewController {
     }
 
     //MARK: - IB Actions
-    @IBAction func valueOfTFChanged() {
+    @IBAction private func valueOfTFChanged() {
         if let userName = userNameTF.text, let password = passwordTF.text {
-            if !userName.isEmpty && !password.isEmpty {
+            if !userName.isEmpty, !password.isEmpty {
                 logInButton.isEnabled = true
             } else {
                 logInButton.isEnabled = false
             }
         }
     }
+
     @IBAction private func forgotUserNameButtonPressed() {
         showAlert(title: "Oops!", message: "Your name is User 😉")
     }
@@ -74,5 +79,15 @@ class LogInViewController: UIViewController {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default))
         present(alert, animated: true)
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == userNameTF {
+            passwordTF.becomeFirstResponder()
+        } else {
+            view.endEditing(true)
+            logInButton.sendActions(for: .touchUpInside)
+        }
+        return true
     }
 }
