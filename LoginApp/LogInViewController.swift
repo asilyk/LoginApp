@@ -43,8 +43,8 @@ class LogInViewController: UIViewController {
             passwordTF.text = nil
         }
     }
-    
-    @IBAction private func unwind(for unwindSegue: UIStoryboardSegue) {
+
+    @IBAction private func unwind(for _: UIStoryboardSegue) {
         passwordTF.text = nil
         userNameTF.text = nil
     }
