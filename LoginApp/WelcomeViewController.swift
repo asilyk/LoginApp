@@ -13,7 +13,6 @@ class WelcomeViewController: UIViewController {
 
     //MARK: - Public Properties
     var userName = ""
-    
 
     //MARK: - Life Cycles Methods
     override func viewDidLoad() {
