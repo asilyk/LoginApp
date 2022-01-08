@@ -58,10 +58,10 @@
 		113EE68E2786B962007A1344 /* LoginApp */ = {
 			isa = PBXGroup;
 			children = (
-				114C77352789600500316E86 /* App */,
 				114C773A2789605300316E86 /* ViewControllers */,
 				114C77382789604000316E86 /* Storyboards */,
 				114C773C2789607200316E86 /* Resources */,
+				114C77352789600500316E86 /* App */,
 			);
 			path = LoginApp;
 			sourceTree = "<group>";
