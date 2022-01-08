@@ -58,16 +58,48 @@
 		113EE68E2786B962007A1344 /* LoginApp */ = {
 			isa = PBXGroup;
 			children = (
-				113EE68F2786B962007A1344 /* AppDelegate.swift */,
-				113EE6912786B962007A1344 /* SceneDelegate.swift */,
-				113EE6932786B962007A1344 /* LogInViewController.swift */,
-				113EE6A62787E00A007A1344 /* WelcomeViewController.swift */,
-				113EE6952786B962007A1344 /* Main.storyboard */,
-				113EE6982786B96C007A1344 /* Assets.xcassets */,
-				113EE69A2786B96C007A1344 /* LaunchScreen.storyboard */,
-				113EE69D2786B96C007A1344 /* Info.plist */,
+				114C77352789600500316E86 /* App */,
+				114C773A2789605300316E86 /* ViewControllers */,
+				114C77382789604000316E86 /* Storyboards */,
+				114C773C2789607200316E86 /* Resources */,
 			);
 			path = LoginApp;
+			sourceTree = "<group>";
+		};
+		114C77352789600500316E86 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				113EE68F2786B962007A1344 /* AppDelegate.swift */,
+				113EE6912786B962007A1344 /* SceneDelegate.swift */,
+				113EE69D2786B96C007A1344 /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		114C77382789604000316E86 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				113EE6952786B962007A1344 /* Main.storyboard */,
+				113EE69A2786B96C007A1344 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		114C773A2789605300316E86 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				113EE6932786B962007A1344 /* LogInViewController.swift */,
+				113EE6A62787E00A007A1344 /* WelcomeViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		114C773C2789607200316E86 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				113EE6982786B96C007A1344 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,7 +324,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z7DXS499R9;
-				INFOPLIST_FILE = LoginApp/Info.plist;
+				INFOPLIST_FILE = LoginApp/App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -311,7 +343,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z7DXS499R9;
-				INFOPLIST_FILE = LoginApp/Info.plist;
+				INFOPLIST_FILE = LoginApp/App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
