@@ -95,7 +95,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DLl-Qk-Brf">
-                                <rect key="frame" x="16" y="708" width="382" height="54"/>
+                                <rect key="frame" x="146.5" y="708" width="121" height="54"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <state key="normal" title="Log Out"/>
                                 <connections>
@@ -114,10 +114,9 @@
                         <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="kQb-08-lcQ" firstAttribute="trailing" secondItem="84G-E5-MuF" secondAttribute="trailing" constant="16" id="3s9-eS-1Nr"/>
+                            <constraint firstItem="DLl-Qk-Brf" firstAttribute="centerX" secondItem="F2Z-vL-F0d" secondAttribute="centerX" id="Kez-hZ-fnO"/>
                             <constraint firstItem="kQb-08-lcQ" firstAttribute="bottom" secondItem="DLl-Qk-Brf" secondAttribute="bottom" constant="100" id="Kss-Fm-Uih"/>
-                            <constraint firstItem="DLl-Qk-Brf" firstAttribute="leading" secondItem="kQb-08-lcQ" secondAttribute="leading" constant="16" id="MGU-uA-vJT"/>
                             <constraint firstItem="84G-E5-MuF" firstAttribute="leading" secondItem="kQb-08-lcQ" secondAttribute="leading" constant="16" id="QAY-6K-rta"/>
-                            <constraint firstItem="kQb-08-lcQ" firstAttribute="trailing" secondItem="DLl-Qk-Brf" secondAttribute="trailing" constant="16" id="gip-hX-G9P"/>
                             <constraint firstItem="84G-E5-MuF" firstAttribute="top" secondItem="kQb-08-lcQ" secondAttribute="top" constant="100" id="xDg-bn-BCN"/>
                         </constraints>
                     </view>
