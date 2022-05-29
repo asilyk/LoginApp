@@ -1,4 +1,4 @@
-# LogIn App
+# LogIn app
 
 The training project for creating applications using the UIKit framework.
 
